@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h3>Employee Details</h3>
+    <div class="clearfix"></div>
+    <p><a routerLink="add" class="btn btn-primary"><i class="fa fa-plus"></i></a></p>
+    <table class="table">
+      <tr>
+        <th>Emp ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>    
+      <tr *ngFor="let x of employeees">
+        <td>{{x._id}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.position}}</td>
+        <td>{{x.office}}</td>
+        <td>{{x.salary}}</td>
+        <td><a (click)="editEmployee(x._id)"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;<a (click)="deleteEmployee(x._id)"><i class="fa fa-close"></i></a></td>
+      </tr>
+
+    </table>
+  </div>
+</div>

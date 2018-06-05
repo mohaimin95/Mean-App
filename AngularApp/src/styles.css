@@ -1,0 +1,13 @@
+.loading {
+    margin-top: 50%;
+    margin-left: 50%;
+    color: blueviolet;
+}
+.clearfix {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
