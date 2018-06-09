@@ -1,0 +1,17 @@
+<h4 class="text-center">List of Employees</h4>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Office</th>
+    <th>Salary</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let x of employees">
+    <td>{{x.name}}</td>
+    <td>{{x.position}}</td>
+    <td>{{x.office}}</td>
+    <td>{{x.salary}}</td>
+    <td><button (click)="onEdit(x._id)" class="btn btn-primary"><i class="fa fa-edit"></i></button>&nbsp;<button (click)="onDelete(x._id)" class="btn btn-danger"><i class="fa fa-close"></i></button></td>
+  </tr>
+</table>
