@@ -67,5 +67,12 @@ router.delete('/:id',(req,res)=>{
         return res.status(200).send("Successfully Deleted");
     });
     });
-
+router.get('/get/positions',(req,res)=>{
+    Employee.distinct('position',(err,docs)=>{
+        if(err)
+        res.send("Error",err);
+        else
+        res.send(docs);
+    });
+});
 module.exports=router;

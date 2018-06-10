@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <input type="text" class="form-control" name="search" [(ngModel)]="search">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 card">
+      {{edata}}
+      <table class="table ">
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+        <tr *ngFor="let x of employees | filter : search">
+          <td>{{x.name}}</td>
+          <td>{{x.position}}</td>
+          <td>{{x.office}}</td>
+          <td>{{x.salary}}</td>
+          <td><a (click)="onEdit(x._id)" class="btn btn-info"><i class="fa fa-edit"></i></a>&nbsp;<a (click)="onDelete(x._id)" class="btn btn-danger"><i class="fa fa-close"></i></a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 jumbotron">
+      <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm.value)"  class="form-horizontal">
+        <label for="name"><b>Name : </b></label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name here" [(ngModel)]="name" required>
+        
+        <label for="position"><b>Position : </b></label>
+        <input type="text" class="form-control" id="position" list="positions" name="position" autocomplete="off" placeholder="Enter designation here" [(ngModel)]="position" required>
+        <datalist id="positions">
+          <option *ngFor="let y of positions" value="{{y}}">{{y}}</option>
+          </datalist>  
+        <label for="office"><b>Office : </b></label>
+        <input type="text" class="form-control" id="office" name="office" placeholder="Enter workplace here" [(ngModel)]="office" required>
+        
+        <label for="salary"><b>Salary : </b></label>
+        <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter salary here" [(ngModel)]="salary" required>
+        <br>
+        <p class="text-center">
+          <button class="btn btn-danger" (click)="onReset()" type="reset">Reset</button>&nbsp;&nbsp;
+        <button class="btn btn-primary" *ngIf="!isUpdate" type="submit">Save</button>
+        <button class="btn btn-primary" *ngIf="isUpdate" type="submit">Update</button>
+        </p>
+      </form>
+    </div>
+
+  </div>
+</div>

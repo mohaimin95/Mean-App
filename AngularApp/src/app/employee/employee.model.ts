@@ -3,5 +3,5 @@ export class EmployeeModel {
     name:string;
     position:string;
     office:string;
-    salary:number;
+    salary:string;
 } 

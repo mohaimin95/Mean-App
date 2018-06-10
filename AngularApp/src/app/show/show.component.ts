@@ -15,7 +15,15 @@ export class ShowComponent implements OnInit {
     .subscribe(data => this.employees=data);
   }
   onDelete(id) {
-    alert(`${id} deletion on the way !`);
+    if(confirm("Are you sure ?")) {
+      this.employeeService.deleteEmployee(id).subscribe((res)=>{
+        if(!res) {
+          alert("Successfully Deleted !");
+        } else {
+          alert("Failed !");
+        } 
+      });
+    }
   }
   
   onEdit(id) {

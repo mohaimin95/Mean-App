@@ -1,27 +1,30 @@
 <h4 class="text-center">Add New Employee</h4>
 <div class="clearfix"></div> 
-<form action="" class="form-horizontal">
+<form action="" name="employeeForm" #employeeData="ngForm" (ngSubmit)="addEmployee(employeeData.value)" class="form-horizontal" >
 <table class="table">
   <tr>
     <th>Name</th>
-    <td><input type="text" placeholder="enter name" class="form-control"></td>
+    <td><input type="text" placeholder="enter name" name="name" class="form-control" ngModel></td>
   </tr>
   
   <tr>
     <th>Position</th>
-    <td><input type="text" placeholder="enter position" class="form-control"></td>
+    <td><input type="text" placeholder="enter position" name="position" class="form-control" ngModel></td>
   </tr>
   <tr>
     <th>Office</th>
-    <td><input type="text" placeholder="enter office" class="form-control"></td>
+    <td><input type="text" placeholder="enter office" name="office" class="form-control" ngModel></td>
   </tr>
   <tr>
     <th>Salary</th>
-    <td><input type="text" placeholder="enter salary" class="form-control"></td>
+    <td><input type="text" placeholder="enter salary" name="salary" class="form-control" ngModel></td>
   </tr>
   <tr>
     <td></td>
     <td><button class="btn btn-primary" type="submit">Submit</button>&nbsp;&nbsp;<button class="btn btn-danger" type="reset">Reset</button></td>
   </tr>
 </table>
+<p>
+  
+</p>
 </form>

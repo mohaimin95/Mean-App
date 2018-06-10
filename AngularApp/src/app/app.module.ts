@@ -10,13 +10,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ShowComponent } from './show/show.component';
 import {EmployeeService} from '../app/employee/employee.service';
 import {HttpClientModule} from '@angular/common/http';
+import { CrudComponent } from './crud/crud.component';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddComponent,
     ShowComponent,
-    NavbarComponent
+    NavbarComponent,
+    CrudComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
