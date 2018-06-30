@@ -5,7 +5,6 @@ import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { AddComponent } from './add/add.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ShowComponent } from './show/show.component';
 import {EmployeeService} from '../app/employee/employee.service';
@@ -16,7 +15,6 @@ import { FilterPipe } from './pipes/filter.pipe';
   declarations: [
     AppComponent,
     HomeComponent,
-    AddComponent,
     ShowComponent,
     NavbarComponent,
     CrudComponent,
